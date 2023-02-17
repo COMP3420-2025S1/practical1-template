@@ -39,6 +39,46 @@
       "comparison": "included",
       "timeout": 10,
       "points": 1
+    },
+    {
+      "name": "pytest colour_rowscolumns",
+      "setup": "sudo -H pip3 install pytest numpy matplotlib",
+      "run": "pytest -k \"colour_rowscolumns\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "pytest remove_red",
+      "setup": "sudo -H pip3 install pytest numpy matplotlib",
+      "run": "pytest -k \"remove_red\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "pytest to_greyscale",
+      "setup": "sudo -H pip3 install pytest numpy matplotlib",
+      "run": "pytest -k \"to_greyscale\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "pytest mirror_image",
+      "setup": "sudo -H pip3 install pytest numpy matplotlib",
+      "run": "pytest -k \"mirror_image\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
     }
   ]
 }
