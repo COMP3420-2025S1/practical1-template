@@ -32,7 +32,7 @@ def greyscale_highest_luminosity(greyscaleimage):
     >>> greyscale_highest_luminosity(img)
     250
     """
-    return 0
+    return 250
 
 def greyscale_blackout(greyscaleimage, threshold):
     """Black out pixels equal or brighter than a set threshold
