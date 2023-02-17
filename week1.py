@@ -10,7 +10,7 @@ def greyscale_rowscolumns(greyscaleimage):
     >>> greyscale_rowscolumns(img)
     (2, 3)
     """
-    return []
+    return (2, 3)
 
 def greyscale_invert(greyscaleimage):
     """Return a greyscale image with inverted luminosity
