@@ -1,6 +1,6 @@
 import numpy as np
 
-import week1_solution as week1;
+import week1;
 
 def test_greyscale_rowscolumns():
     img = np.array([[   0, 255,   0],  
