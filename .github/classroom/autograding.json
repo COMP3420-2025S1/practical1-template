@@ -1,9 +1,9 @@
 {
   "tests": [
     {
-      "name": "pytest rowscolumns",
+      "name": "pytest greyscale_rowscolumns",
       "setup": "sudo -H pip3 install pytest numpy matplotlib",
-      "run": "pytest -k \"rowscolumns\"",
+      "run": "pytest -k \"greyscale_rowscolumns\"",
       "input": "",
       "output": "",
       "comparison": "included",
