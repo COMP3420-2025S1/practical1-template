@@ -10,7 +10,7 @@ def greyscale_rowscolumns(greyscaleimage):
     >>> greyscale_rowscolumns(img)
     (2, 3)
     """
-    return (2, 3)
+    return greyscaleimage.shape
 
 def greyscale_invert(greyscaleimage):
     """Return a greyscale image with inverted luminosity
@@ -22,7 +22,7 @@ def greyscale_invert(greyscaleimage):
            [205,  55, 205],
            [145, 128, 115]])
     """
-    return []
+    return 255 - greyscaleimage
 
 def greyscale_highest_luminosity(greyscaleimage):
     """Return the highest luminosity
@@ -32,7 +32,7 @@ def greyscale_highest_luminosity(greyscaleimage):
     >>> greyscale_highest_luminosity(img)
     250
     """
-    return 250
+    return greyscaleimage.max()
 
 def greyscale_blackout(greyscaleimage, threshold):
     """Black out pixels equal or brighter than a set threshold
@@ -44,7 +44,16 @@ def greyscale_blackout(greyscaleimage, threshold):
            [ 50,   0,  50],
            [110, 127, 140]])
     """
-    return []
+    temp = []
+    for r in greyscaleimage:
+        row = []
+        for c in r:
+            if c >= threshold:
+                row.append(0)
+            else:
+                row.append(c)
+        temp.append(row)
+    return np.array(temp)
 
 # Exercises related to section 2
 
@@ -55,7 +64,7 @@ def colour_rowscolumns(colourimage):
     >>> colour_rowscolumns(img)
     (2, 3)
     """            
-    return []
+    return colourimage.shape[:2]
 
 def remove_red(colourimage):
     """Remove information from the red channel
@@ -70,7 +79,9 @@ def remove_red(colourimage):
             [  0, 255, 255],
             [  0, 127, 127]]])
     """
-    return []
+    result = colourimage.copy()
+    result[:,:,0] = 0
+    return result
 
 def to_greyscale(colourimage):
     """Convert from colour to greyscale.
@@ -80,7 +91,7 @@ def to_greyscale(colourimage):
     array([[ 85.,  85.,  85.],
            [  0., 255., 127.]])
     """
-    return []
+    return colourimage.mean(-1)
 
 # Exercises related to section 3
 
@@ -97,7 +108,13 @@ def mirror_image(colourimage):
             [255, 255, 255],
             [  0,   0,   0]]])   
     """
-    return []
+    result = []
+    for r in colourimage:
+        row = []
+        for c in r:
+            row.insert(0,c)
+        result.append(row)
+    return np.array(result)
 
 if __name__ == "__main__":
     import doctest
