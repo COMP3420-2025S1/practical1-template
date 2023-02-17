@@ -1,14 +1,44 @@
 {
   "tests": [
     {
-      "name": "pytest",
+      "name": "pytest rowscolumns",
       "setup": "sudo -H pip3 install pytest numpy matplotlib",
-      "run": "pytest",
+      "run": "pytest -k \"rowscolumns\"",
       "input": "",
       "output": "",
       "comparison": "included",
       "timeout": 10,
-      "points": 100
+      "points": 1
+    },
+    {
+      "name": "pytest invert",
+      "setup": "sudo -H pip3 install pytest numpy matplotlib",
+      "run": "pytest -k \"invert\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "pytest highest_luminosity",
+      "setup": "sudo -H pip3 install pytest numpy matplotlib",
+      "run": "pytest -k luminosity",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "pytest blackout",
+      "setup": "sudo -H pip3 install pytest numpy matplotlib",
+      "run": "pytest -k blackout",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
     }
   ]
 }
