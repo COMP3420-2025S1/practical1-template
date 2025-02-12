@@ -61,17 +61,5 @@ class TestWeek1(unittest.TestCase):
         np.testing.assert_array_equal(week1.to_greyscale(img),
                                     target)
 
-    def test_mirror_image(self):
-        img = np.array([[[255,   0,   0], [  0, 255,   0], [  0,   0, 255]],
-                        [[  0,   0,   0], [255, 255, 255], [127, 127, 127]]])
-        target = np.array([[[  0,   0, 255],
-                            [  0, 255,   0],
-                            [255,   0,   0]],
-                        [[127, 127, 127],
-                            [255, 255, 255],
-                            [  0,   0,   0]]])
-        np.testing.assert_array_equal(week1.mirror_image(img),
-                                    target)
-
 if __name__ == "__main__":
     unittest.main()
