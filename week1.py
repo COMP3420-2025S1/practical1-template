@@ -1,5 +1,6 @@
 import numpy as np
 from matplotlib import pyplot as plt
+import cv2
 
 # Exercises related to section 1
 
@@ -82,22 +83,32 @@ def to_greyscale(colourimage):
     """
     return []
 
-# Exercises related to section 3
+def capture_image(webcam_id=0):
 
-def mirror_image(colourimage):
-    """Generate a mirror image
-    >>> img = np.array([[[255,   0,   0], [  0, 255,   0], [  0,   0, 255]], \
-                        [[  0,   0,   0], [255, 255, 255], [127, 127, 127]]])
-    >>> mirror_image(img)
-    array([[[  0,   0, 255],
-            [  0, 255,   0],
-            [255,   0,   0]],
-    <BLANKLINE>
-           [[127, 127, 127],
-            [255, 255, 255],
-            [  0,   0,   0]]])   
-    """
-    return []
+    # Initialize the webcam
+    print("Initialising video capture")
+    cap = cv2.VideoCapture(webcam_id)
+
+    # Check if the webcam is opened correctly
+    if not cap.isOpened():
+        print("Error: Could not open webcam.")
+        exit()
+
+    # Capture a single frame
+    print("Capturing frame")
+    ret, frame = cap.read()
+
+    # Check if the frame was captured correctly
+    if not ret:
+        print("Error: Could not read frame.")
+        exit()
+
+    # Release the webcam
+    print("Releasing webcam")
+    cap.release()
+
+    # Convert from BGR to RGB
+    return cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
 if __name__ == "__main__":
     import doctest
