@@ -2,7 +2,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 import cv2
 
-# Exercises related to section 1
+# Section 1
 
 def greyscale_rowscolumns(greyscaleimage):
     """Return the image resolution (rows, columns) of a greyscale image
@@ -47,7 +47,7 @@ def greyscale_blackout(greyscaleimage, threshold):
     """
     return []
 
-# Exercises related to section 2
+# Section 2
 
 def colour_rowscolumns(colourimage):
     """Return the image resolution (rows, columns)
@@ -82,6 +82,8 @@ def to_greyscale(colourimage):
            [  0., 255., 127.]])
     """
     return []
+
+# Section 3
 
 def capture_image(webcam_id=0):
 
